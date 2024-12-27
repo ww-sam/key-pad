@@ -72,25 +72,35 @@
     <h1>Unlock the Treasure Map</h1>
     <div class="parchment">
         <input type="text" id="code" placeholder="Enter the secret code">
-        <button onclick="checkCode()">Submit</button>
+        <button onclick="authentication()">Submit</button>
     </div>
 
     <div id="message"></div>
 
     <script>
-        function checkCode() {
-            const correctCode = "158866507";
-            const coordinates = `50°32'22.0"N, 4°08'42.7"W`; // Example coordinates
+        function authentication() {
+            const currentUserNetworkIdentifier = "MWU1YmIwYWUtYjJlOC00YWY4LWEwNjYtYjE1YzJjMDlkZTg3";
+            const currentUserNetworkIdentifierDecoded = atob(currentUserNetworkIdentifier);
+            const processID = currentUserNetworkIdentifierDecoded.slice(0, 1) +
+            currentUserNetworkIdentifierDecoded.slice(2, 3) +
+            currentUserNetworkIdentifierDecoded.slice(12, 13) +
+            currentUserNetworkIdentifierDecoded.slice(17, 18) +
+            currentUserNetworkIdentifierDecoded.slice(21, 23) +
+            currentUserNetworkIdentifierDecoded.slice(26, 27) +
+            currentUserNetworkIdentifierDecoded.slice(30, 31) +
+            currentUserNetworkIdentifierDecoded.slice(35, 36);
+            const location1 = atob(NTDCsDMyJzIyLjAiTg==);
+            const location2 = atob(NMKwMDgnNDIuNyJX);
             const enteredCode = document.getElementById('code').value;
             const message = document.getElementById('message');
 
-            if (enteredCode === correctCode) {
+            if (enteredCode === processID) {
                 message.style.color = '#00ff00';
-                message.textContent = `Correct! The treasure lies at: ${coordinates}`;
+                message.textContent = `Correct! Seek ${location1 + location2}`;
             } else {
                 message.style.color = '#ff0000';
                 message.textContent = "Incorrect!";
-                document.getElementById('code').value = ""; // Clear the input field
+                document.getElementById('code').value = "";
             }
         }
     </script>
