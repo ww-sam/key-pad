@@ -3,18 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code Entry</title>
+    <title>Enter the Pirate Code</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
-        input { padding: 10px; font-size: 16px; }
-        button { padding: 10px 20px; font-size: 16px; }
-        #message { margin-top: 20px; font-size: 18px; color: red; }
+        body {
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            background-image: url('https://th.bing.com/th/id/R.9c296ecc86c6f4b0fbb53a4734252665?rik=HiZoekXiYMs8%2bQ&pid=ImgRaw&r=0');
+            background-size: cover;
+            color: #fff;
+            text-align: center;
+            margin: 50px;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #ffd700; /* Gold color */
+            text-shadow: 2px 2px 4px #000;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #eee;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 18px;
+            border: 2px solid #000;
+            border-radius: 5px;
+            width: 300px;
+            margin: 20px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #000;
+            color: #ffd700;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-shadow: 1px 1px 2px #000;
+        }
+
+        button:hover {
+            background-color: #ffd700;
+            color: #000;
+        }
+
+        #message {
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #ffd700;
+            text-shadow: 1px 1px 2px #000;
+        }
+
+        .parchment {
+            background: rgba(255, 248, 220, 0.8); /* Parchment color */
+            border: 2px solid #8b4513; /* Dark brown */
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
-    <h1>Enter the Secret Code</h1>
-    <input type="text" id="code" placeholder="Enter code here">
-    <button onclick="checkCode()">Submit</button>
+    <h1>Unlock the Treasure Map</h1>
+
+    <div class="parchment">
+        <input type="text" id="code" placeholder="Enter the secret code">
+        <button onclick="checkCode()">Submit</button>
+    </div>
+
     <div id="message"></div>
 
     <script>
@@ -23,13 +82,13 @@
             const coordinates = "51.5074° N, 0.1278° W"; // Example coordinates
             const enteredCode = document.getElementById('code').value;
             const message = document.getElementById('message');
-            
+
             if (enteredCode === correctCode) {
-                message.style.color = 'green';
-                message.textContent = `Correct! The coordinates are: ${coordinates}`;
+                message.style.color = '#00ff00';
+                message.textContent = `Yarr! The code be correct! The treasure lies at: ${coordinates}`;
             } else {
-                message.style.color = 'red';
-                message.textContent = "Wrong code! Try again.";
+                message.style.color = '#ff0000';
+                message.textContent = "Blimey! That be the wrong code, try again, matey!";
             }
         }
     </script>
