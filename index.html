@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: 'Trebuchet MS', Arial, sans-serif;
-            background-image: url('https://th.bing.com/th/id/R.9c296ecc86c6f4b0fbb53a4734252665?rik=HiZoekXiYMs8%2bQ&pid=ImgRaw&r=0');
+            background-image: url('https://via.placeholder.com/1200x800?text=Pirate+Map+Background');
             background-size: cover;
             color: #fff;
             text-align: center;
@@ -30,8 +30,10 @@
             font-size: 18px;
             border: 2px solid #000;
             border-radius: 5px;
-            width: 300px;
-            margin: 20px 0;
+            width: 80%;
+            max-width: 300px;
+            margin: 20px auto;
+            display: block;
         }
 
         button {
@@ -63,14 +65,16 @@
             padding: 20px;
             border-radius: 10px;
             display: inline-block;
+            text-align: center;
         }
     </style>
 </head>
 <body>
     <h1>Unlock the Treasure Map</h1>
+    <p>Ahoy, matey! Enter the secret pirate code to reveal the hidden coordinates.</p>
 
     <div class="parchment">
-        <input type="text" id="code" placeholder="Enter the secret code">
+        <input type="text" id="code" placeholder="Enter the pirate code">
         <button onclick="checkCode()">Submit</button>
     </div>
 
@@ -85,10 +89,11 @@
 
             if (enteredCode === correctCode) {
                 message.style.color = '#00ff00';
-                message.textContent = `Yarr! The code be correct! The treasure lies at: ${coordinates}`;
+                message.textContent = `Correct! The treasure lies at: ${coordinates}`;
             } else {
                 message.style.color = '#ff0000';
-                message.textContent = "Blimey! That be the wrong code, try again, matey!";
+                message.textContent = "Incorrect!";
+                document.getElementById('code').value = ""; // Clear the input field
             }
         }
     </script>
