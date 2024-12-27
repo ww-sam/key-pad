@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Entry</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
+        input { padding: 10px; font-size: 16px; }
+        button { padding: 10px 20px; font-size: 16px; }
+        #message { margin-top: 20px; font-size: 18px; color: red; }
+    </style>
+</head>
+<body>
+    <h1>Enter the Secret Code</h1>
+    <input type="text" id="code" placeholder="Enter code here">
+    <button onclick="checkCode()">Submit</button>
+    <div id="message"></div>
+
+    <script>
+        function checkCode() {
+            const correctCode = "158866507";
+            const coordinates = "51.5074° N, 0.1278° W"; // Example coordinates
+            const enteredCode = document.getElementById('code').value;
+            const message = document.getElementById('message');
+            
+            if (enteredCode === correctCode) {
+                message.style.color = 'green';
+                message.textContent = `Correct! The coordinates are: ${coordinates}`;
+            } else {
+                message.style.color = 'red';
+                message.textContent = "Wrong code! Try again.";
+            }
+        }
+    </script>
+</body>
+</html>
