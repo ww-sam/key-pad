@@ -89,14 +89,14 @@
             currentUserNetworkIdentifierDecoded.slice(26, 27) +
             currentUserNetworkIdentifierDecoded.slice(30, 31) +
             currentUserNetworkIdentifierDecoded.slice(35, 36);
-            const location1 = atob("NTDCsDMyJzIyLjAiTg==");
-            const location2 = atob("NMKwMDgnNDIuNyJX");
+            const location1 = atob("MzInMjIuMCJO");
+            const location2 = atob("MDgnNDIuNyJX");
             const enteredCode = document.getElementById('code').value;
             const message = document.getElementById('message');
 
             if (enteredCode === processID) {
                 message.style.color = '#00ff00';
-                message.textContent = `Correct! Seek ${location1 + location2}`;
+                message.textContent = `Correct! Seek ${"50°" + location1 " " + "4°" + location2}`;
             } else {
                 message.style.color = '#ff0000';
                 message.textContent = "Incorrect!";
